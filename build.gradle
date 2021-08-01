@@ -1,0 +1,56 @@
+plugins {
+    id 'org.jetbrains.intellij' version '1.1'
+    id 'java'
+}
+
+group 'org.wjl.jetbrains.plugins'
+version '1.0.0'
+
+//patchPluginXml {
+//    changeNotes """
+//        <ul>
+//            <li>Add method navigation to view</li>
+//            <li>Add Class file display</li>
+//            <li>fix bugs</li>
+//        </ul>
+//    """
+//}
+
+sourceCompatibility = 11
+
+repositories {
+    maven { url 'file:///D:/repository'}
+    mavenLocal()
+    maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
+    mavenCentral()
+//    maven {
+//        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+//    }
+//    maven { name "Gradle"; url "https://plugins.gradle.org/m2/" }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    //noinspection SpellCheckingInspection
+    implementation('cn.hutool:hutool-all:5.3.9')
+
+    implementation('dom4j:dom4j:1.6.1')
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+//    version = '2021.2'
+    localPath = 'D:\\repository\\com-intellij\\ideaIC-2021.2'
+//    pluginName 'RestfulTool'
+    plugins = ['java', 'properties', 'yaml']
+}
+test {
+    useJUnitPlatform()
+}
+//编译JAVA文件时采用UTF-8
+//noinspection GroovyAssignabilityCheck
+//tasks.withType(JavaCompile) {
+//    options.encoding = "UTF-8"
+//}
