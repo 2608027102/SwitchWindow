@@ -1,21 +1,31 @@
 <idea-plugin>
     <id>org.wjl.jetbrains.plugins</id>
     <name>SwitchWindow</name>
-    <vendor>JetBrains</vendor>
+    <vendor email="1120955357@qq.com" url="https://github.com/2608027102">WJL</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
-    <!--    <extensions defaultExtensionNs="com.intellij">-->
-    <!--        <applicationService serviceImplementation="org.jetbrains.plugins.template.services.MyApplicationService"/>-->
-    <!--        <projectService serviceImplementation="org.jetbrains.plugins.template.services.MyProjectService"/>-->
-    <!--    </extensions>-->
+    <description><![CDATA[
+        <a href="https://github.com/2608027102/SwitchWindow">Github</a>
+        <ul>
+            <li>
+                <b>一个可以切换打开窗口的工具</b>
+                <ol>
+                    <li>支持搜索 窗口 (Ctrl + Alt + /)</li>
+                </ol>
+            </li>
+        </ul>
+        ]]></description>
 
-    <!--    <applicationListeners>-->
-    <!--        <listener class="org.jetbrains.plugins.template.listeners.MyProjectManagerListener"-->
-    <!--                  topic="com.intellij.openapi.project.ProjectManagerListener"/>-->
-    <!--    </applicationListeners>-->
+    <change-notes>
+        <![CDATA[
+        修复ActionId命名冲突
+        ]]>
+    </change-notes>
+
+    <idea-version since-build="2018.1"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <projectService
@@ -23,7 +33,7 @@
     </extensions>
 
     <actions>
-        <action id="Tool.GotoRequestService"
+        <action id="Tool.GoToWindowAction"
                 class="org.wjl.jetbrains.plugins.GoToWindowAction">
             <add-to-group group-id="GoToTargetEx" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt SLASH"/>

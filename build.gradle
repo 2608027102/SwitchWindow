@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'org.wjl.jetbrains.plugins'
-version '1.0.0'
+version '1.0.0.1'
 
 //patchPluginXml {
 //    changeNotes """
@@ -19,7 +19,7 @@ version '1.0.0'
 sourceCompatibility = 11
 
 repositories {
-    maven { url 'file:///D:/repository'}
+    maven { url 'file:///C:/Users/zccp/data/maven_repo_zccp'}
     mavenLocal()
     maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
     mavenCentral()
@@ -31,7 +31,8 @@ repositories {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0':q
+
 
     //noinspection SpellCheckingInspection
     implementation('cn.hutool:hutool-all:5.3.9')
@@ -42,7 +43,7 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
 //    version = '2021.2'
-    localPath = 'D:\\repository\\com-intellij\\ideaIC-2021.2'
+    localPath = 'C:\\Users\\zccp\\tools\\ideaIC-2021.2.win'
 //    pluginName 'RestfulTool'
     plugins = ['java', 'properties', 'yaml']
 }
